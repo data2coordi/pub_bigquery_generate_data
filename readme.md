@@ -3,7 +3,7 @@
 # ##機能概要
 Bigqueryは大量データを処理するが性能検証用にテストデータを作成するのは大変である。
 そこで、Bigqueryで大量データを生成するSQLを作成した。
-SQL一発で作成するので非常に高速。またシンプルなので柔軟にカスタマイズし易い。
+SQL一発で作成するので非常に高速。またシンプルなので柔軟にカスタマイズ可能。
 
 <br><br><br> 
 # ##以降で説明するコードの全体像
@@ -22,7 +22,7 @@ bq query --use_legacy_sql=false 'delete from `ml_dataset.bigdata_for_ev` where p
 bq query --use_legacy_sql=false   <gen_bigdata.sql
 
 
-#非パーティションテーブル作成
+#非パーティションテーブル作成(おまけ）
 #テーブル作成
 bq rm -t ml_dataset.bigdata_for_ev_nopart
 bq mk -t --schema ./schema/bigdata_for_ev_schema.json \
@@ -112,6 +112,13 @@ FROM
 - 通常の数値項目1は連番として生成している。
 - 通常の数値項目2は乱数関数で1億個にランダムに分散するようにしている。
 - その他の項目は作りたいカーディナリティに合わせて乱数に数字を掛け合わせている。
+
+生成するデータ件数のコントロールについて
+
+FROM句ではGENERATE_ARRAYで生成したレコードとINFORMATION_SCHEMA(システムテーブル）を直積で結合することで
+データを発生させている。GENERATE_ARRAY × aの件数 × bの件数 の件数で生成される。
+GENERATE_ARRAYのみで実現できると思っていたがリソースオーバーで落るのでこの方式とした。
+ここでは約1億件のレコードを生成させている。
 
 
 
