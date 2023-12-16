@@ -57,7 +57,7 @@ ml_dataset.bigdata_for_ev
 
 上記ではパーティション＆クラスタリング構成のテーブルを作成している。
 
-[パーティション＆クラスタリングテーブル](./schema/bigdata_for_ev_schema.json)
+[パーティション＆クラスタリングテーブル:schema/bigdata_for_ev_schema.json](./schema/bigdata_for_ev_schema.json)
    
 スキーマ情報は上記のとおり。
 検証内容に応じて任意の型や項目名に変更する。
@@ -79,7 +79,7 @@ bq query --use_legacy_sql=false 'delete from `ml_dataset.bigdata_for_ev` where p
 bq query --use_legacy_sql=false <gen_bigdata.sql
 ```
 
-[データを生成するSQL](./gen_bigdata.sql)
+[データを生成するSQL:gen_bigdata.sql](./gen_bigdata.sql)
 
 
 下記SQLを実行している。
@@ -130,7 +130,7 @@ GENERATE_ARRAYのみで実現できると思っていたがリソースオーバ
 下記のとおり目的どおりのデータが生成されている。
 ![データ生成結果](./img/パーティションテーブルのカウント.jpg)
 
-[カウント用SQL](./query.sql)
+[カウント用SQL:query.sql](./query.sql)
 
 
 # ##おまけ
