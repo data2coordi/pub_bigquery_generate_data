@@ -99,7 +99,7 @@ SELECT
 	,cast(cast(rand()*100000 as integer) as string) 
 FROM 
 	UNNEST(GENERATE_ARRAY(1, 21627)),
-	`ml_dataset`.INFORMATION_SCHEMA.COLUMNS a,
+	`ml_dataset`.INFORMATION_SCHEMA.COLUMNS a,    -- この環境ではINFORMATION_SCHEMA.COLUMNS68件
 	`ml_dataset`.INFORMATION_SCHEMA.COLUMNS b;
 ```
 
@@ -119,6 +119,8 @@ FROM句ではGENERATE_ARRAYで生成したレコードとINFORMATION_SCHEMA(シ�
 データを発生させている。GENERATE_ARRAY × aの件数 × bの件数 の件数で生成される。
 GENERATE_ARRAYのみで実現できると思っていたがリソースオーバーで落るのでこの方式とした。
 ここでは約1億件のレコードを生成させている。
+尚、INFORMATION_SCHEMA.COLUMNS以外のテーブルを指定しても良い。
+※ この環境ではINFORMATION_SCHEMA.COLUMNSは68件。各環境によって件数は異なるので注意してください。
 
 
 
