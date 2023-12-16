@@ -60,7 +60,7 @@ ml_dataset.bigdata_for_ev
 [パーティション＆クラスタリングテーブル:schema/bigdata_for_ev_schema.json](./schema/bigdata_for_ev_schema.json)
    
 スキーマ情報は上記のとおり。
-検証内容に応じて任意の型や項目名に変更する。
+検証内容に応じて任意の型や項目名に変更してください。
 
 
 <br><br><br> 
