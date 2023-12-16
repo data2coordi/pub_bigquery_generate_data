@@ -1,0 +1,59 @@
+
+
+
+
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "partid", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "clusterdid", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "seqid", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "num_col1", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "str_col2", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "str_col3", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "str_col4", 
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE", 
+    "name": "str_col5", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "str_col6", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "NULLABLE", 
+    "name": "str_col7", 
+    "type": "STRING"
+  }
+  ]
+
+
+
