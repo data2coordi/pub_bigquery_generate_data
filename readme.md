@@ -135,7 +135,7 @@ GENERATE_ARRAYのみで実現できると思っていたがリソースオーバ
 
 # ##おまけ
 
-上記で作成したデータを非パーティション処理にselect＆insertで一括で投入する。
+上記で作成したデータを非パーティションテーブルにselect＆insertで一括で投入する。
 
 ## テーブル作成
 
@@ -164,6 +164,9 @@ bq query --use_legacy_sql=false 'insert into `ml_dataset.bigdata_for_ev_nopart` 
 
 # ##データ生成結果
 下記のとおり約1億件を15秒程度で生成している。
+予想ではストレージからのREADがない分、直積方式の方が高速だろうと予想していた。
+しかし、select&insertの方が高速であった。つまりIOよりもCPU処理コストの方が大きい。
+CPU処理は完全に分散することは困難でボトルネックが発生するためだろう。
 
 ![データ生成の実行時間](./img/select＆Insertでの大量データ生成.jpg)
 
