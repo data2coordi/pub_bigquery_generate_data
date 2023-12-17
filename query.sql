@@ -7,8 +7,8 @@ select
 	max(clusterdid)  max_clusterdid,
 	min(seqid)  min_seqid, 
 	max(seqid)  max_seqid,
-	min(num_col1)  max_seqid,
-	max(num_col1)  max_seqid
+	min(num_col1)  min_num_col1,
+	max(num_col1)  max_num_col1
 from `ml_dataset.bigdata_for_ev` ;
 
 return;

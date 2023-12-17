@@ -1,7 +1,7 @@
 
 insert into `ml_dataset.bigdata_for_ev` 
 SELECT
-	cast(ROW_NUMBER() OVER() /100000  as integer)
+	cast(ROW_NUMBER() OVER() /1000000  as integer)
 	,ROW_NUMBER() OVER() 
 	,ROW_NUMBER() OVER() 
 	,cast(rand()*100000000 as integer) 
