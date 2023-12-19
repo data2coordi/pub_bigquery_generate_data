@@ -58,7 +58,7 @@ ml_dataset.bigdata_for_ev
 
 上記ではパーティション＆クラスタリング構成のテーブルを作成している。
 
-[パーティション＆クラスタリングテーブル:schema/bigdata_for_ev_schema.json](./schema/bigdata_for_ev_schema.json)
+[パーティション＆クラスタリングテーブル:schema/bigdata_for_ev_schema.json](https://github.com/data2coordi/pub_bigquery_generate_data/schema/bigdata_for_ev_schema.json)
    
 スキーマ情報は上記のとおり。
 検証内容に応じて任意の型や項目名に変更してください。
@@ -171,7 +171,7 @@ bq query --use_legacy_sql=false 'insert into `ml_dataset.bigdata_for_ev_nopart` 
 しかし、select&insertでコピーの方が高速であった。IOよりもCPU処理コストの方が大きい、または、
 直積方式では連番を生成しているのでCPU処理部分を並列化することが困難でボトルネックが発生するためだろう。
 
-![データ生成の実行時間](./img/select＆Insertでの大量データ生成.jpg)
+![データ生成の実行時間](https://github.com/data2coordi/pub_bigquery_generate_data/img/select＆Insertでの大量データ生成.jpg)
 
 
 下記のとおり目的どおりのデータが生成されている。
